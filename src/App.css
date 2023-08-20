@@ -79,3 +79,7 @@ h1 {
 h1 {
   margin-left: 20px; /* Adjust the spacing between the logo and title */
 }
+
+.address-input {
+  margin-left: 1rem;
+}

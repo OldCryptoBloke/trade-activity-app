@@ -107,7 +107,7 @@ function App() {
         />
       </div> 
       <h1>Trade Activities - </h1>
-      <input
+      <input className='address-input'
           type="text"
           value={inputAddress}
           onChange={handleAddressChange}
