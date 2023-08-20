@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/trade-activity-app/static/css/main.cf7e0f7d.css",
+    "main.js": "/trade-activity-app/static/js/main.0be245e6.js",
+    "static/js/787.c023e00a.chunk.js": "/trade-activity-app/static/js/787.c023e00a.chunk.js",
+    "index.html": "/trade-activity-app/index.html",
+    "main.cf7e0f7d.css.map": "/trade-activity-app/static/css/main.cf7e0f7d.css.map",
+    "main.0be245e6.js.map": "/trade-activity-app/static/js/main.0be245e6.js.map",
+    "787.c023e00a.chunk.js.map": "/trade-activity-app/static/js/787.c023e00a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cf7e0f7d.css",
+    "static/js/main.0be245e6.js"
+  ]
+}
