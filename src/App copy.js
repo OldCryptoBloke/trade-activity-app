@@ -3,41 +3,6 @@ import './App.css'; // You can define your own styling in this CSS file
 
 function App() {
   const [data, setData] = useState([]);
-  const [lastFetchTime, setLastFetchTime] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [inputAddress, setInputAddress] = useState('0x40988180c9cc5e7d0ac4e8055545b76a4470fe14'); // Default address
-  
-  useEffect(() => {
-    async function fetchData() {
-      setIsLoading(true); // Set loading state
-      try {
-        const apiUrl = `https://api.vela.exchange/graph/trade_activities/42161/${encodeURIComponent(inputAddress)}/`;
-        console.log('API URL:', apiUrl);
-    
-        const response = await fetch(apiUrl);
-        const jsonData = await response.json();
-        console.log('Fetched Data:', jsonData);
-    
-        if (lastFetchTime === null || jsonData[0]?.createdAt > lastFetchTime) {
-          setData(jsonData);
-          setLastFetchTime(jsonData[0]?.createdAt);
-        }
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      } finally {
-        setIsLoading(false); // Clear loading state
-      }
-    }
-
-
-    fetchData();
-    const interval = setInterval(fetchData, 30000); // Every 30 seconds
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, [inputAddress, lastFetchTime]);
-
   const tokenLookup = {
     1: 'BTC/USD',
     2: 'ETH/USD',
@@ -70,7 +35,35 @@ function App() {
     // Add more entries as needed
   };
 
-    const formatCurrency = (value, decimalPlaces) => {
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch(
+          'https://api.vela.exchange/graph/trade_activities/42161/0x0468a85ddd74daa10975bd9a15ca255b1e566e83/'
+        );
+        const jsonData = await response.json();
+        setData(jsonData);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    }
+    fetchData();
+  }, []);
+
+  //   const formatCurrency = (value, decimalPlaces) => {
+  //   const uintValue = value; // Assuming value is a string representing the UINT value
+  //   const decimals = 1e18; // This is the scale of the UINT values in your data
+  //   const decimalValue = Number(uintValue) / decimals; // Convert UINT to decimal
+    
+  //   return new Intl.NumberFormat('en-US', {
+  //     style: 'currency',
+  //     currency: 'USD',
+  //     minimumFractionDigits: 6,
+  //     maximumFractionDigits: 6,
+  //   }).format(decimalValue * 1e-12); // Adjust for the desired decimal shift
+  // };
+
+  const formatCurrency = (value, decimalPlaces) => {
     const uintValue = value; // Assuming value is a string representing the UINT value
     const decimals = 1e18; // This is the scale of the UINT values in your data
     const decimalValue = Number(uintValue) / decimals; // Convert UINT to decimal
@@ -90,31 +83,13 @@ function App() {
       .join(' ');
   };
 
-  const handleAddressChange = (event) => {
-    setInputAddress(event.target.value);
-  };
+  const account = data.length > 0 ? data[0].account : '';
 
   return (
     <div className="App">
-      
-      <div className="header">
-      
-      <div className="logo-container">
-        <img
-          src={`${process.env.PUBLIC_URL}/logo.svg`}
-          alt="React Logo"
-          className={`logo ${isLoading ? 'spin' : ''}`}
-        />
-      </div> 
+      {/* <h1>Trade Activities - {account}</h1> */}
       <h1>Trade Activities - </h1>
-      <input
-          type="text"
-          value={inputAddress}
-          onChange={handleAddressChange}
-          placeholder="Enter an address"
-        />
-      </div>
-      <table className={`table ${isLoading ? 'hidden' : ''}`}>
+      <table className="table">
         <thead>
           <tr>
             <th>Action Type</th>
@@ -158,7 +133,6 @@ function App() {
           ))}
         </tbody>
       </table>
-      
     </div>
   );
 }

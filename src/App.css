@@ -1,38 +1,81 @@
+/* App.css */
 .App {
+  font-family: Arial, sans-serif;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #1b0113;
   color: white;
+  padding: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: #210202;
+  color: rgb(166, 160, 160);
 }
 
-@keyframes App-logo-spin {
-  from {
+.table th,
+.table td {
+  padding: 0.5rem;
+  border: 1px solid rgb(12, 12, 12);
+}
+
+.table th {
+  background-color: #111010;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #342a45;
+}
+
+.table tbody tr:nth-child(odd) {
+  background-color: #1f0f4a;
+}
+
+.table th,
+.table td {
+  text-align: left;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 100px; /* Adjust the desired width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px; /* Adjust the spacing between the header and the table */
+}
+
+.logo {
+  width: 100px; /* Adjust the desired width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.spin {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
+}
+
+h1 {
+  margin-left: 20px; /* Adjust the spacing between the logo and title */
 }
