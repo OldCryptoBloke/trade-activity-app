@@ -6,6 +6,30 @@ function App() {
   const [lastFetchTime, setLastFetchTime] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [inputAddress, setInputAddress] = useState('0x40988180c9cc5e7d0ac4e8055545b76a4470fe14'); // Default address
+  const [totalProfit, setTotalProfit] = useState(0); // New state for total profit
+  
+  useEffect(() => {
+    async function fetchData() {
+      setIsLoading(true); // Set loading state
+      try {
+        const response = await fetch(
+          `https://api.vela.exchange/graph/trade_activities/42161/${inputAddress}`
+        );
+        const jsonData = await response.json();
+
+        if (lastFetchTime === null || jsonData[0]?.createdAt < lastFetchTime) {
+          setData(jsonData);
+          setLastFetchTime(jsonData[0]?.createdAt);
+        }
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      } finally {
+        setIsLoading(false); // Clear loading state
+      }
+    }
+
+    fetchData();
+  }, [inputAddress, lastFetchTime]); // Only inputAddress and lastFetchTime
   
   useEffect(() => {
     async function fetchData() {
@@ -22,6 +46,14 @@ function App() {
           setData(jsonData);
           setLastFetchTime(jsonData[0]?.createdAt);
         }
+
+      
+        // Calculate total profit
+        const calculatedTotalProfit = data.reduce((total, activity) => {
+          return total + parseFloat(activity.profitLoss);
+        }, 0);
+        setTotalProfit(calculatedTotalProfit);
+
       } catch (error) {
         console.error('Error fetching data:', error);
       } finally {
@@ -29,14 +61,13 @@ function App() {
       }
     }
 
-
     fetchData();
     const interval = setInterval(fetchData, 30000); // Every 30 seconds
 
     return () => {
       clearInterval(interval);
     };
-  }, [inputAddress, lastFetchTime]);
+  }, [data, inputAddress, lastFetchTime]);
 
   const tokenLookup = {
     1: 'BTC/USD',
@@ -93,10 +124,11 @@ function App() {
   const handleAddressChange = (event) => {
     setInputAddress(event.target.value);
   };
+ 
 
   return (
     <div className="App">
-      
+     
       <div className="header">
       
       <div className="logo-container">
@@ -113,6 +145,8 @@ function App() {
           onChange={handleAddressChange}
           placeholder="Enter an address"
         />
+        <div className="total-profit">Total Profit: {formatCurrency(totalProfit, 2)}</div> {/* Display total profit */}
+     
       </div>
       <table className={`table ${isLoading ? 'hidden' : ''}`}>
         <thead>
