@@ -1,0 +1,26 @@
+account	"0x0468a85ddd74daa10975bd9a15ca255b1e566e83"
+averagePrice	"63075359424000000000000000000"
+collateral	"65431677630363267894608725327998"
+createdAt	1692608609
+closedAt	0
+positionFee	"1308640800000000000000000000000"
+fundingFee	"0"
+borrowFee	"0"
+tokenId	"5"
+isLong	false
+lmtPrice	"0"
+markPrice	"63075359424000000000000000000"
+orderStatus	"FILLED"
+pendingCollateral	"0"
+pendingSize	"0"
+pendingDelayCollateral	"0"
+pendingDelaySize	"0"
+posId	"30494"
+positionStatus	"OPEN"
+positionType	"Market Order"
+realisedPnl	"-1308640800000000000000000000000"
+totalROI	"0"
+totalSize	"1635801000000000000000000000000000"
+totalCollateral	"65431677630363267894608725327998"
+size	"1635801000000000000000000000000000"
+stpPrice	"25

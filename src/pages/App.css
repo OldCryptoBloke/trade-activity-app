@@ -1,0 +1,93 @@
+/* App.css */
+.App {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #1b0113;
+  color: white;
+  padding: 2rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: #210202;
+  color: rgb(166, 160, 160);
+}
+
+.table th,
+.table td {
+  padding: 0.5rem;
+  border: 1px solid rgb(12, 12, 12);
+}
+
+.table th {
+  background-color: #111010;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #342a45;
+}
+
+.table tbody tr:nth-child(odd) {
+  background-color: #1f0f4a;
+}
+
+.table th,
+.table td {
+  text-align: left;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 100px; /* Adjust the desired width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px; /* Adjust the spacing between the header and the table */
+  justify-content: left; /* Align items horizontally */
+  padding: 20px;
+}
+
+.logo {
+  width: 100px; /* Adjust the desired width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.spin {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+h1 {
+  margin-left: 20px; /* Adjust the spacing between the logo and title */
+}
+
+.address-input {
+  margin-left: 1rem;
+}
+
+.total-profit {
+  align-items: end;
+  font-size: 1.2rem;
+  color: white;
+}
