@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/trade-activity-app/static/css/main.a3bca403.css",
+    "main.css": "/trade-activity-app/static/css/main.69a7a75b.css",
     "main.js": "/trade-activity-app/static/js/main.6a1cc96a.js",
     "static/js/787.c023e00a.chunk.js": "/trade-activity-app/static/js/787.c023e00a.chunk.js",
     "static/media/nebula.jpg": "/trade-activity-app/static/media/nebula.a552d26e2d8096a5a761.jpg",
@@ -61,12 +61,12 @@
     "static/media/roboto-greek-ext-400-normal.woff": "/trade-activity-app/static/media/roboto-greek-ext-400-normal.f708607d2a7290fb8bfa.woff",
     "static/media/roboto-greek-ext-700-normal.woff": "/trade-activity-app/static/media/roboto-greek-ext-700-normal.249853776d22a271b2b5.woff",
     "index.html": "/trade-activity-app/index.html",
-    "main.a3bca403.css.map": "/trade-activity-app/static/css/main.a3bca403.css.map",
+    "main.69a7a75b.css.map": "/trade-activity-app/static/css/main.69a7a75b.css.map",
     "main.6a1cc96a.js.map": "/trade-activity-app/static/js/main.6a1cc96a.js.map",
     "787.c023e00a.chunk.js.map": "/trade-activity-app/static/js/787.c023e00a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a3bca403.css",
+    "static/css/main.69a7a75b.css",
     "static/js/main.6a1cc96a.js"
   ]
 }
