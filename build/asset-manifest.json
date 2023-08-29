@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/trade-activity-app/static/css/main.ac9a0c03.css",
-    "main.js": "/trade-activity-app/static/js/main.f82fcb4c.js",
+    "main.css": "/trade-activity-app/static/css/main.26e4c754.css",
+    "main.js": "/trade-activity-app/static/js/main.6a1cc96a.js",
     "static/js/787.c023e00a.chunk.js": "/trade-activity-app/static/js/787.c023e00a.chunk.js",
+    "static/media/nebula.jpg": "/trade-activity-app/static/media/nebula.a552d26e2d8096a5a761.jpg",
     "static/media/roboto-latin-500-normal.woff2": "/trade-activity-app/static/media/roboto-latin-500-normal.f25d774ecfe0996f8eb5.woff2",
     "static/media/roboto-latin-700-normal.woff2": "/trade-activity-app/static/media/roboto-latin-700-normal.227c93190fe7f82de3f8.woff2",
     "static/media/roboto-latin-400-normal.woff2": "/trade-activity-app/static/media/roboto-latin-400-normal.b009a76ad6afe4ebd301.woff2",
@@ -60,12 +61,12 @@
     "static/media/roboto-greek-ext-400-normal.woff": "/trade-activity-app/static/media/roboto-greek-ext-400-normal.f708607d2a7290fb8bfa.woff",
     "static/media/roboto-greek-ext-700-normal.woff": "/trade-activity-app/static/media/roboto-greek-ext-700-normal.249853776d22a271b2b5.woff",
     "index.html": "/trade-activity-app/index.html",
-    "main.ac9a0c03.css.map": "/trade-activity-app/static/css/main.ac9a0c03.css.map",
-    "main.f82fcb4c.js.map": "/trade-activity-app/static/js/main.f82fcb4c.js.map",
+    "main.26e4c754.css.map": "/trade-activity-app/static/css/main.26e4c754.css.map",
+    "main.6a1cc96a.js.map": "/trade-activity-app/static/js/main.6a1cc96a.js.map",
     "787.c023e00a.chunk.js.map": "/trade-activity-app/static/js/787.c023e00a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ac9a0c03.css",
-    "static/js/main.f82fcb4c.js"
+    "static/css/main.26e4c754.css",
+    "static/js/main.6a1cc96a.js"
   ]
 }
