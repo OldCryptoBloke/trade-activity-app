@@ -10,7 +10,8 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 100vh; /* Ensure the container takes at least the full viewport height */
+  height: calc(100vh - 16px); /* Subtract some space for the potential scrollbar */
+  overflow-y: auto; /* Allow vertical scrolling when content overflows */
   
 }
 
