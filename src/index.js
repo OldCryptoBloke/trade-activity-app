@@ -13,20 +13,24 @@ import Layout from "./pages/Layout.js";
 import TradeActivity from "./pages/TradeActivity.js";
 import Home from "./pages/Home.js";
 import OpenPositions from "./pages/OpenPositions.js";
-import Test2 from "./pages/Test2.js";
 import NoPage from "./pages/NoPage.js";
+import ClosedPositions from './pages/ClosedPositions';
+import Deposits from './pages/Deposits';
+import Withdrawals from './pages/Withdrawals';
 
 export default function App() {
   return (
     
-    <BrowserRouter>
+    <BrowserRouter basename="/trade-activity-app">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route exact path="/" component={<Home />} />
           <Route index element={<Home />} />
           <Route path="trade-activity" element={<TradeActivity />} />
           <Route path="open-positions" element={<OpenPositions />} />
-          <Route path="test2" element={<Test2 />} />
+          <Route path="closed-positions" element={<ClosedPositions />} />
+          <Route path="deposits" element={<Deposits />} />
+          <Route path="withdrawals" element={<Withdrawals />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

@@ -1,0 +1,25 @@
+/* Home.css */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+.home-container {
+    background-image: url('nebula.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Additional styling for the content */
+  .home-container h1 {
+    font-size: 3rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }

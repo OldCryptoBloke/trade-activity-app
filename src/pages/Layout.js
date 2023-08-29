@@ -42,6 +42,16 @@ const Layout = () => {
               </Typography>
             </MenuItem>
             <MenuItem onClick={handleClose}>
+              <Typography component={Link} to="/deposits" variant="button" color="inherit" sx={{ textDecoration: 'none' }}>
+                Deposits
+              </Typography>
+            </MenuItem>
+            <MenuItem onClick={handleClose}>
+              <Typography component={Link} to="/withdrawals" variant="button" color="inherit" sx={{ textDecoration: 'none' }}>
+                Withdrawals
+              </Typography>
+            </MenuItem>
+            <MenuItem onClick={handleClose}>
               <Typography component={Link} to="/trade-activity" variant="button" color="inherit" sx={{ textDecoration: 'none' }}>
                 Trade Activity
               </Typography>
@@ -52,8 +62,8 @@ const Layout = () => {
               </Typography>
             </MenuItem>
             <MenuItem onClick={handleClose}>
-              <Typography component={Link} to="/test2" variant="button" color="inherit" sx={{ textDecoration: 'none' }}>
-                Test2
+              <Typography component={Link} to="/closed-positions" variant="button" color="inherit" sx={{ textDecoration: 'none' }}>
+                Closed Positions
               </Typography>
             </MenuItem>
           </Menu>

@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import './App.css'; // You can define your own styling in this CSS file
-const OpenPositions = () => {
+const ClosedPositions = () => {
     
     const [data, setData] = useState([]);
     const [lastFetchTime, setLastFetchTime] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [inputAddress, setInputAddress] = useState('0x4c2b0B4Fff1bb49A94d66130e40771351319A751'); // Default address
-    // const [totalProfit, setTotalProfit] = useState(0); // New state for total profit
+    const [totalProfit, setTotalProfit] = useState(0); // New state for total profit
     
     useEffect(() => {
       async function fetchData() {
         setIsLoading(true); // Set loading state
         try {
           const response = await fetch(
-            `https://api.vela.exchange/graph/open_positions/42161/${inputAddress}`
+            `https://api.vela.exchange/graph/closed_positions/42161/${inputAddress}`
           );
           const jsonData = await response.json();
   
@@ -35,7 +35,7 @@ const OpenPositions = () => {
       async function fetchData() {
         setIsLoading(true); // Set loading state
         try {
-          const apiUrl = `https://api.vela.exchange/graph/open_positions/42161/${encodeURIComponent(inputAddress)}/`;
+          const apiUrl = `https://api.vela.exchange/graph/closed_positions/42161/${encodeURIComponent(inputAddress)}/`;
           console.log('API URL:', apiUrl);
       
           const response = await fetch(apiUrl);
@@ -48,11 +48,11 @@ const OpenPositions = () => {
           }
   
         
-          // Calculate total profit
-          // const calculatedTotalProfit = data.reduce((total, activity) => {
-          //   return total + parseFloat(activity.totalROI);
-          // }, 0);
-          // setTotalProfit(calculatedTotalProfit);
+          //Calculate total profit
+          const calculatedTotalProfit = data.reduce((total, activity) => {
+            return total + parseFloat(activity.realisedPnl);
+          }, 0);
+          setTotalProfit(calculatedTotalProfit);
   
         } catch (error) {
           console.error('Error fetching data:', error);
@@ -149,14 +149,14 @@ const OpenPositions = () => {
             className={`logo ${isLoading ? 'spin' : ''}`}
           />
         </div> 
-        <h1>Open Positions - </h1>
+        <h1>Closed Positions - </h1>
         <input className='address-input'
             type="text"
             value={inputAddress}
             onChange={handleAddressChange}
             placeholder="Enter an address"
           />
-          {/* <div className="total-profit"> Total Profit: {formatCurrency(totalProfit, 2)}</div> Display total profit */}
+          <div className="total-profit"> Total Profit: {formatCurrency(totalProfit, 2)}</div> {/* Display total profit */}
        
         </div>
         <table className={`table ${isLoading ? 'hidden' : ''}`}>
@@ -178,7 +178,6 @@ const OpenPositions = () => {
               <th>Position Status</th>
               <th>Position Type</th>
               <th>Realised P/L</th>
-              <th>Total ROI</th>
             </tr>
           </thead>
           <tbody>
@@ -200,7 +199,6 @@ const OpenPositions = () => {
                 <td>{toTitleCase(entry.positionStatus)}</td>
                 <td>{entry.positionType}</td>
                 <td>{formatCurrency(entry.realisedPnl, 2)}</td>
-                <td>{formatCurrency(entry.totalROI, 2)}</td>
               </tr>
             ))}
           </tbody>
@@ -210,5 +208,5 @@ const OpenPositions = () => {
     );
   };
   
-  export default OpenPositions;
+  export default ClosedPositions;
   

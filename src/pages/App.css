@@ -1,10 +1,17 @@
 /* App.css */
+
 .App {
   font-family: Arial, sans-serif;
   text-align: center;
   background-color: #1b0113;
   color: white;
   padding: 2rem;
+  background-image: url('nebula.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh; /* Ensure the container takes at least the full viewport height */
+  
 }
 
 .table {
@@ -90,4 +97,9 @@ h1 {
   align-items: end;
   font-size: 1.2rem;
   color: white;
+}
+
+.line-chart {
+  width: 100%;
+  height: 400px; /* Adjust as needed */
 }
